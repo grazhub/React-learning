@@ -31,7 +31,7 @@ const IshopComponent = React.createClass({
 			)
 		);
 		return React.DOM.div({ className: "ishopComponent" }, 
-			React.DOM.div({ className: "ishopComponent__name" }, `Welcome to the ${this.props.shopName}, body`),
+			React.DOM.div({ className: "ishopComponent__name" }, `Welcome to the ${this.props.shopName}, buddy`),
 			React.DOM.div({ className: "ishopComponent__products" }, productsCode),
 		);
 	},
