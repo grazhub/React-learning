@@ -1,0 +1,12 @@
+.ishopComponent {
+	font-family: Arial, Helvetica, sans-serif;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.ishopComponent__name {
+	font-size: 25px;
+	text-align: center;
+	margin: 30px auto;
+}

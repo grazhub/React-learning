@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+	<meta charset="utf-8" />
+	<title>Ishop task</title>
+</head> 
+<body> 
+	<div>
+		<a href="../index.html">Back to menu</a>
+	</div>
+	<div id="container"></div> 
+
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet">
+      
+	<script src="https://unpkg.com/react@15/dist/react.js"></script> 
+	<script src="https://unpkg.com/react-dom@15/dist/react-dom.js"></script> 
+		
+	<script src="./IshopComponent2.js"></script>
+	<link rel="stylesheet" type="text/css" href="./IshopComponent2.css" />
+
+	<script src="./ProductComponent.js"></script>
+	<link rel="stylesheet" type="text/css" href="./ProductComponent.css" />
+
+	<script>
+		const shopName = "Ishop";
+		const productList = [
+			{ code: 1, name: "Huawei nova 9 SE JLN-LX1", price: 406.59, count: 34, photo: "https://content2.onliner.by/catalog/device/header@2/32da9b518aff15a22314d05ad01c413f.jpeg"},
+			{ code: 2, name: "HONOR 50", price: 459.90, count: 34, photo: "https://content2.onliner.by/catalog/device/header@2/fe938a7b32281eeb384db8c9cd75cc0b.jpeg"},
+			{ code: 3, name: "iphone X", price: 609.99, count: 34, photo: "https://content2.onliner.by/catalog/device/header@2/98b65279323ea2beeba0c347f365f728.jpeg"},
+		];
+
+		ReactDOM.render(
+			React.createElement(IshopComponent2, { products: productList, shopName: shopName }), 
+			document.getElementById('container') 
+		);
+
+	</script>
+
+</body> 
+</html>
