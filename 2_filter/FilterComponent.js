@@ -14,22 +14,20 @@ const FilterComponent = React.createClass({
 		return {
 		  	isSorting: false,
 			filterValue: "",
+			filteredStrings: this.props.initStrings,
 		};
 	},
 
-	setSettings: function (EO) {
-		switch (EO.target.type) {
-			case "checkbox":
-				this.setState({ isSorting: !this.state.isSorting });
-				break;
-			case "button":
-				this.setState({ isSorting: false, filterValue: "" });
-				break;
-			case "text":
-			default:
-				this.setState({ filterValue: EO.target.value });
-				break;
-		}
+	changeSorting: function (EO) {
+		this.setState({ isSorting: EO.target.checked }, this.getStrings);
+	},
+
+	changeFilter: function (EO) {
+		this.setState({ filterValue: EO.target.value }, this.getStrings);
+	},
+
+	reset: function () {
+		this.setState({ isSorting: false, filterValue: "" }, this.getStrings);
 	},
 
 	getStrings: function () {
@@ -40,19 +38,19 @@ const FilterComponent = React.createClass({
 				return a.value > b.value ? 1 : -1;
 			});
 		}
-		return this.state.filterValue ? str.filter(s => s.value.includes(this.state.filterValue)) : str;
+		this.setState({ filteredStrings: this.state.filterValue ? str.filter(s => s.value.includes(this.state.filterValue)) : str });
 	},
   
 	render: function () {
-		const stringsBox = this.getStrings().map(str =>
+		const stringsBox = this.state.filteredStrings.map(str =>
 			React.DOM.div({ key: str.code }, React.DOM.span(null, str.value))
 		);
 
 		return React.DOM.div({ className: "filterComponent" }, 
 			React.DOM.div({ className: "filterComponent__controls" },
-				React.DOM.input({ type: "checkbox", checked: this.state.isSorting, onChange: this.setSettings }),
-				React.DOM.input({ value: this.state.filterValue, onChange: this.setSettings }),
-				React.DOM.input({ type: "button", value: "reset", onClick: this.setSettings }),
+				React.DOM.input({ type: "checkbox", checked: this.state.isSorting, onChange: this.changeSorting }),
+				React.DOM.input({ value: this.state.filterValue, onChange: this.changeFilter }),
+				React.DOM.input({ type: "button", value: "reset", onClick: this.reset }),
 			),
 			React.DOM.div({ className: "filterComponent__result" }, stringsBox),
 		);
