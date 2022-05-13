@@ -1,0 +1,31 @@
+.cardComponent {
+	position: sticky;
+	top: 20px;
+	height: fit-content;
+	width: 400px;
+}
+
+.cardComponent.editmode .cardComponent_field {
+	display: flex;
+	margin: 10px 0;
+	height: 32px;
+	/* flex-direction: row; */
+}
+.cardComponent_field_label {
+	width: 70px;
+	display: flex;
+	align-items: center;
+
+}
+.cardComponent_field input {
+	width: 180px;
+	box-sizing: border-box;
+	margin: 0 10px 0 5px;
+}
+.cardComponent_field_error {
+	color: #ff7f50;
+	display: flex;
+	align-items: center;
+	max-width: 150px;
+	font-size: 12px;
+}

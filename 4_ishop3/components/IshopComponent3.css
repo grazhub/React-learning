@@ -10,3 +10,11 @@
 	text-align: center;
 	margin: 30px auto;
 }
+.ishopComponent__wrap {
+	display: flex;
+	justify-content: space-between;
+	position: relative;
+}
+.ishopComponent__card {
+	width: 400px;
+}
