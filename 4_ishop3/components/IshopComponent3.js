@@ -21,7 +21,7 @@ class IshopComponent3 extends React.Component{
 
 	state = { 
 		activeProduct: null,
-		products: this.props.products,
+		products: structuredClone(this.props.products),
 		cardMode: "readonly",
 		startEdit: false,
 	};
@@ -31,7 +31,7 @@ class IshopComponent3 extends React.Component{
 			this.setState({ activeProduct: productProps.code, cardMode: productProps.mode, startEdit: productProps.startEdit });
 		} else if (status === "delete") {
 			const index = this.state.products.findIndex(item => item.code === productProps.code)
-			const updatedProds = this.state.products;
+			const updatedProds = structuredClone(this.state.products);
 			updatedProds.splice(index, 1);
 			this.setState({ products: updatedProds, activeProduct: this.state.activeProduct === productProps.code ? null : this.state.activeProduct })
 		}
