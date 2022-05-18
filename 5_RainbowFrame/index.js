@@ -1,14 +1,14 @@
 import React from "react";
 import ReactDOM  from "react-dom";
 
-import ComponentFrames from "./components/ComponentFrames";
+import RainbowFrame from "./components/RainbowFrame";
 
 const colors = ["red", "orange", "yellow", "green", "#00BFFF", "blue", "purple"];
 const innerText = "Hello!";
 
 ReactDOM.render(
-	<ComponentFrames colors = { colors }>
+	<RainbowFrame colors = { colors }>
 		{ innerText }
-	</ComponentFrames>,
+	</RainbowFrame>,
 	document.getElementById('container') 
 );

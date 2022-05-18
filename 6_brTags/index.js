@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM  from "react-dom";
 
-import Container from "./components/Container";
+import BR2JSX from "./components/BR2JSX";
 
 const text = "первый<br/>второй<br/>третий<br/>последний";
 
 ReactDOM.render(
-	<Container text = { text }/>,
+	<BR2JSX text = { text }/>,
 	document.getElementById('container') 
 );
