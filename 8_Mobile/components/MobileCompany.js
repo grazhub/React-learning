@@ -37,7 +37,7 @@ class MobileCompany extends React.PureComponent {
 	};
 
 	removeClient = id => {
-		const newClients = structuredClone(this.state.clients);
+		const newClients = this.state.clients.slice();
 		const clientInd = newClients.findIndex(item => item.id === id);
 		newClients.splice(clientInd, 1);
 		this.setState({ clients: newClients });
