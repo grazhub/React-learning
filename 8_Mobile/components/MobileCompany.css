@@ -1,0 +1,35 @@
+﻿.MobileCompany
+{
+  /* border: double gray 3px; */
+  max-width: 1200px;
+  padding: 3px 7px;
+  /* background-color: lightyellow; */
+}
+
+.MobileCompanyNameBlok {
+	border-bottom: 1px solid #cccccc;
+	padding: 10px 0;
+	margin: 40px 0;
+}
+
+.MobileCompanyTable {
+	margin: 0 0 20px;
+	border-collapse: collapse;
+	width: 100%;
+}
+.MobileCompanyTable tr {
+	height: 50px;
+}
+.MobileCompanyTable th {
+	text-align: start;
+}
+.MobileCompanyTable td {
+	border-top: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+	box-sizing: border-box;
+}
+
+.MobileCompanyName
+{
+  font-weight: bold;
+}
